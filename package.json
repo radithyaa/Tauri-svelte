@@ -10,7 +10,9 @@
     "check": "svelte-check --tsconfig ./tsconfig.json && tsc -p tsconfig.node.json",
     "tauri": "tauri",
     "tauri:dev": "tauri dev",
-    "tauri:build": "tauri build"
+    "tauri:build": "tauri build",
+    "tauri:android": "tauri android dev",
+    "tauri:ios": "tauri ios dev"
   },
   "dependencies": {
     "@tauri-apps/api": "^1.5.3"

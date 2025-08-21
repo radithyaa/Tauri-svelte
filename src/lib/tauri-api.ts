@@ -1,5 +1,5 @@
-import { invoke } from '@tauri-apps/api/tauri';
-import { appWindow } from '@tauri-apps/api/window';
+import { invoke } from '@tauri-apps/api/core';
+import { getCurrentWindow } from '@tauri-apps/api/window';
 
 export interface TauriAPI {
   greet: (name: string) => Promise<string>;
@@ -24,13 +24,13 @@ export const tauriAPI: TauriAPI = {
 
   async getAppVersion(): Promise<string> {
     if (!window.__TAURI__) {
-      return '0.0.0 (Web)';
+      return '2.0.0 (Web)';
     }
     try {
       return await invoke('get_app_version');
     } catch (error) {
       console.error('Error getting app version:', error);
-      return '0.0.0 (Web)';
+      return '2.0.0 (Web)';
     }
   },
 
@@ -40,7 +40,8 @@ export const tauriAPI: TauriAPI = {
       return;
     }
     try {
-      await appWindow.close();
+      const currentWindow = getCurrentWindow();
+      await currentWindow.close();
     } catch (error) {
       console.error('Error closing app:', error);
     }
@@ -52,7 +53,8 @@ export const tauriAPI: TauriAPI = {
       return;
     }
     try {
-      await appWindow.minimize();
+      const currentWindow = getCurrentWindow();
+      await currentWindow.minimize();
     } catch (error) {
       console.error('Error minimizing app:', error);
     }
@@ -64,7 +66,8 @@ export const tauriAPI: TauriAPI = {
       return;
     }
     try {
-      await appWindow.toggleMaximize();
+      const currentWindow = getCurrentWindow();
+      await currentWindow.toggleMaximize();
     } catch (error) {
       console.error('Error toggling maximize:', error);
     }

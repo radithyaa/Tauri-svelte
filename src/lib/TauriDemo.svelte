@@ -28,7 +28,7 @@
 <div class="tauri-demo">
   <div class="demo-section">
     <h2>🦀 Tauri Integration</h2>
-    <p class="version">App Version: <strong>{appVersion}</strong></p>
+    <p class="version">Tauri v2 - App Version: <strong>{appVersion}</strong></p>
   </div>
 
   <div class="demo-section">
@@ -56,20 +56,20 @@
     <h3>Features Available</h3>
     <div class="features-grid">
       <div class="feature-card">
-        <h4>🏠 Native Desktop</h4>
-        <p>Window management, system tray, and native menus</p>
+        <h4>🏠 Cross-Platform</h4>
+        <p>Desktop, mobile (iOS/Android), and web support</p>
       </div>
       <div class="feature-card">
         <h4>📁 File System</h4>
-        <p>Read, write, and manage files securely</p>
+        <p>Secure file operations with scoped access</p>
       </div>
       <div class="feature-card">
         <h4>🔔 Notifications</h4>
-        <p>Native system notifications</p>
+        <p>Cross-platform native notifications</p>
       </div>
       <div class="feature-card">
-        <h4>🌐 Web APIs</h4>
-        <p>Full access to web APIs when running in browser</p>
+        <h4>🔌 Plugin System</h4>
+        <p>Modular architecture with official plugins</p>
       </div>
     </div>
   </div>
